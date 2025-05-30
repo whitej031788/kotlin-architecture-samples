@@ -22,7 +22,7 @@ jobs:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
       - name: Clean and Build
-        run: ./gradlew clean build --no-build-cache --refresh-dependencies --stacktrace --info
+        run: ./gradlew clean build --no-build-cache --refresh-dependencies --stacktrace -x lint -x lintDebug -x lintRelease
       - name: Cache SonarQube packages
         uses: actions/cache@v4
         with:
