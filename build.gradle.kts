@@ -33,9 +33,9 @@ sonar {
 allprojects {
     configurations.all {
         resolutionStrategy {
-            force("org.bouncycastle:bcprov-jdk15to18:1.79")
-            force("org.bouncycastle:bcpkix-jdk15to18:1.79")
-            force("org.bouncycastle:bcutil-jdk15to18:1.79")
+            force("org.bouncycastle:bcprov-jdk15to18:1.80")
+            force("org.bouncycastle:bcpkix-jdk15to18:1.80")
+            force("org.bouncycastle:bcutil-jdk15to18:1.80")
         }
     }
 }
