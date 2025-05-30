@@ -31,10 +31,6 @@ sonar {
 }
 
 allprojects {
-    repositories {
-        mavenCentral()
-        google() // Ensure mavenCentral or jcenter is available for Bouncy Castle
-    }
     configurations.all {
         resolutionStrategy {
             // Force a specific version to prevent conflicts
