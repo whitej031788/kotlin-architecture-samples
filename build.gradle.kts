@@ -33,9 +33,9 @@ sonar {
 allprojects {
     configurations.all {
         resolutionStrategy {
-            // Force a specific version to prevent conflicts
-            force("org.bouncycastle:bcprov-jdk15to18:1.70")
-            force("org.bouncycastle:bcpkix-jdk15to18:1.70")
+            force("org.bouncycastle:bcprov-jdk15to18:1.79") # Or 1.80, or 1.77 if 1.79/1.80 cause new issues
+            force("org.bouncycastle:bcpkix-jdk15to18:1.79") # Match version
+            force("org.bouncycastle:bcutil-jdk15to18:1.79") # Crucial: bcutil contains EdECObjectIdentifiers in newer versions
         }
     }
 }
