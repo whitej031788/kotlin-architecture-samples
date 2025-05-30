@@ -29,3 +29,21 @@ sonar {
     property("sonar.projectName", "kotlin-architecture-samples")
   }
 }
+
+allprojects {
+    repositories {
+        mavenCentral() // Ensure mavenCentral or jcenter is available for Bouncy Castle
+    }
+    dependencies {
+        // Explicitly add Bouncy Castle for compatibility
+        implementation("org.bouncycastle:bcprov-jdk15to18:1.70")
+        implementation("org.bouncycastle:bcpkix-jdk15to18:1.70")
+    }
+    configurations.all {
+        resolutionStrategy {
+            // Force a specific version to prevent conflicts
+            force("org.bouncycastle:bcprov-jdk15to18:1.70")
+            force("org.bouncycastle:bcpkix-jdk15to18:1.70")
+        }
+    }
+}
