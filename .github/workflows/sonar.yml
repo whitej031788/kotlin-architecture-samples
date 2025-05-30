@@ -21,8 +21,6 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
-      - name: Clean and Build
-        run: ./gradlew clean build --no-build-cache --refresh-dependencies --stacktrace -x lint -x lintDebug -x lintRelease
       - name: Cache SonarQube packages
         uses: actions/cache@v4
         with:
@@ -39,4 +37,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: ./gradlew build sonar --info
+        run: ./gradlew build sonar --info -x lint -x lintDebug -x lintRelease
