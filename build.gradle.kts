@@ -20,4 +20,12 @@ plugins {
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.compose.compiler) apply false
+    id("org.sonarqube") version "6.2.0.5505"
+}
+
+sonar {
+  properties {
+    property("sonar.projectKey", "whitej031788_kotlin-architecture-samples_4584e6b6-9ce4-462f-a4f0-5da67a4eda6c")
+    property("sonar.projectName", "kotlin-architecture-samples")
+  }
 }
