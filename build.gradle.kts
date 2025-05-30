@@ -40,3 +40,13 @@ allprojects {
         }
     }
 }
+
+// This is a temporary block and is added because of the following issue:
+// https://community.sonarsource.com/t/sonarqube-gradle-plugin-6-0-breaks-android-tasks/130863/12
+// The block should be removed after upgrading the "androidGradlePlugin" to version 8.9 or higher.
+// The issue has been fixed by Google and will be available in the next version.
+buildscript {
+    dependencies {
+        classpath("org.bouncycastle:bcutil-jdk18on:1.79")
+    }
+}
