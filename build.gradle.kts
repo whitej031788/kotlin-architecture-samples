@@ -32,12 +32,8 @@ sonar {
 
 allprojects {
     repositories {
-        mavenCentral() // Ensure mavenCentral or jcenter is available for Bouncy Castle
-    }
-    dependencies {
-        // Explicitly add Bouncy Castle for compatibility
-        implementation("org.bouncycastle:bcprov-jdk15to18:1.70")
-        implementation("org.bouncycastle:bcpkix-jdk15to18:1.70")
+        mavenCentral()
+        google() // Ensure mavenCentral or jcenter is available for Bouncy Castle
     }
     configurations.all {
         resolutionStrategy {
